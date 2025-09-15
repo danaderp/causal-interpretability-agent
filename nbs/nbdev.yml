@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "causal-interpretability-agent"
+  site-url: "https://danaderp.github.io/causal-interpretability-agent"
+  description: "Empowering reasoning agents to explain code generation outcomes"
+  repo-branch: main
+  repo-url: "https://github.com/danaderp/causal-interpretability-agent"

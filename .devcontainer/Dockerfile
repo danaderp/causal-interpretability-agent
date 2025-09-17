@@ -11,6 +11,7 @@ RUN apt-get install pciutils
 RUN apt-get install curl
 RUN pip3 -q install pip --upgrade
 RUN pip install --upgrade pip
+RUN pip install crewai --ignore-installed
 
 RUN pip install -r requirements.txt
 RUN curl -fsSL https://ollama.com/install.sh | sh

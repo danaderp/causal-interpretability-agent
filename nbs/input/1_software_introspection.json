@@ -1,0 +1,44 @@
+{
+  "scenario_a": {
+    "step1": {
+      "softwareTask": "text2code",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are an experienced software engineer. Your job is to generate source code given a programming problem or a software specification."
+        },
+        {
+          "role": "user",
+          "content": "[SOFTWARE SPECIFICATION] Generate a python method that receives two vectors as parameters and return the cross product."
+        }
+      ]
+    },
+    "step2": {
+      "softwareTask": "code2test",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are an experienced software tester. Your job is to generate unit test cases given a focal method."
+        },
+        {
+          "role": "user",
+          "content": "Generate a python unit test case for the following focal method:"
+        }
+      ]
+    },
+    "step3": {
+      "softwareTask": "summarization",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are an experienced software reviewer. Your job is to summarize python focal methods."
+        },
+        {
+          "role": "user",
+          "content": "Generate a summary or description in natural language for the following focal method:"
+        }
+      ]
+    }
+  },
+  "scenario_b": {}
+}

@@ -9,7 +9,7 @@
         },
         {
           "role": "user",
-          "content": "[CAUSAL TASK] Giving the previous variables in the json file {FACTORS}, generate a causal graph that explains how they influence each other. Consider that those variables are influencing the generation of the function {FUNCTION}, therefore the code generation should be a separate node in the graph. The outcome must be in Graphviz DOT format."
+          "content": "[CAUSAL TASK] Giving the following variable in the json file {FACTORS}, generate a causal graph that explains how they influence each other. Consider that those variables are influencing the generation of the function {FUNCTION}, therefore the code generation should be a separate node in the graph. The outcome must be in Graphviz DOT format."
         },
         {
           "role": "user",
@@ -26,7 +26,7 @@
         },
         {
           "role": "user",
-          "content": "[CAUSAL TASK] Giving the previous variables in the json file {FACTORS}, generate a causal graph that explains how they influence each other. Consider that those variables are influencing the generation of the test case {TEST}, therefore the code generation should be a separate node in the graph. The outcome must be in Graphviz DOT format."
+          "content": "[CAUSAL TASK] Giving the following variables in the json file {FACTORS}, generate a causal graph that explains how they influence each other. Consider that those variables are influencing the generation of the test case {TEST}, therefore the code generation should be a separate node in the graph. The outcome must be in Graphviz DOT format."
         },
         {
           "role": "user",
@@ -43,7 +43,7 @@
         },
         {
           "role": "user",
-          "content": "[CAUSAL TASK] Giving the previous variables in the json file {FACTORS}, generate a causal graph that explains how they influence each other. Consider that those variables are influencing the generation of the summary {SUMMARY}, therefore the code generation should be a separate node in the graph. The outcome must be in Graphviz DOT format."
+          "content": "[CAUSAL TASK] Giving the following variables in the json file {FACTORS}, generate a causal graph that explains how they influence each other. Consider that those variables are influencing the generation of the summary {SUMMARY}, therefore the code generation should be a separate node in the graph. The outcome must be in Graphviz DOT format."
         },
         {
           "role": "user",

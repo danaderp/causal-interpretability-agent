@@ -9,7 +9,7 @@
         },
         {
           "role": "user",
-          "content": "[SOFTWARE TASK] Generate a python method that receives two vectors as parameters and return the cross product."
+          "content": "[SOFTWARE TASK] Generate a python method that receives two vectors as parameters and return the cross product. Generate only the code of the function without any examples or tests."
         },
         {
           "role": "user",

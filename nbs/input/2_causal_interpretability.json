@@ -1,0 +1,56 @@
+{
+  "scenario_a": {
+    "step1": {
+      "softwareTask": "text2code",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are an expert in causal inference and counterfactual reasoning. Your job is to infer a causal graph from a set of variables and draft counterfactual explanations."
+        },
+        {
+          "role": "user",
+          "content": "[CAUSAL TASK] Giving the previous variables in the json file {FACTORS}, generate a causal graph that explains how they influence each other. Consider that those variables are influencing the generation of the function {FUNCTION}, therefore the code generation should be a separate node in the graph. The outcome must be in Graphviz DOT format."
+        },
+        {
+          "role": "user",
+          "content": "[COUNTERFACTUAL TASK] What would have changed or happened if the software developer had not considered the variable {NODE} during the generation of the {FUNCTION} function? Provide at most three counterfactual answers. Estimate a probability of occurrence for each answer based solely on the causal graph in Graphviz DOT format. The outcome must be contained in a json format in which the first level comprises the name of the counterfactual answer; the second level comprises a description of the answer, a step by step of the rationale of that counterfactual answer, and the probability of occurrence."
+        }
+      ]
+    },
+    "step2": {
+      "softwareTask": "code2test",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are an expert in causal inference and counterfactual reasoning. Your job is to infer a causal graph from a set of variables and draft counterfactual explanations."
+        },
+        {
+          "role": "user",
+          "content": "[CAUSAL TASK] Giving the previous variables in the json file {FACTORS}, generate a causal graph that explains how they influence each other. Consider that those variables are influencing the generation of the test case {TEST}, therefore the code generation should be a separate node in the graph. The outcome must be in Graphviz DOT format."
+        },
+        {
+          "role": "user",
+          "content": "[COUNTERFACTUAL TASK] What would have changed or happened if the software tester had not considered the variable {NODE} during the generation of the {TEST} test? Provide at most three counterfactual answers. Estimate a probability of occurrence for each answer based solely on the causal graph in Graphviz DOT format. The outcome must be contained in a json format in which the first level comprises the name of the counterfactual answer; the second level comprises a description of the answer, a step by step of the rationale of that counterfactual answer, and the probability of occurrence."
+        }
+      ]
+    },
+    "step3": {
+      "softwareTask": "summarization",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are an expert in causal inference and counterfactual reasoning. Your job is to infer a causal graph from a set of variables and draft counterfactual explanations."
+        },
+        {
+          "role": "user",
+          "content": "[CAUSAL TASK] Giving the previous variables in the json file {FACTORS}, generate a causal graph that explains how they influence each other. Consider that those variables are influencing the generation of the summary {SUMMARY}, therefore the code generation should be a separate node in the graph. The outcome must be in Graphviz DOT format."
+        },
+        {
+          "role": "user",
+          "content": "[COUNTERFACTUAL TASK] What would have changed or happened if the software developer had not considered the variable {NODE} during the generation of the summary: {SUMMARY}? Provide at most three counterfactual answers. Estimate a probability of occurrence for each answer based solely on the causal graph in Graphviz DOT format. The outcome must be contained in a json format in which the first level comprises the name of the counterfactual answer; the second level comprises a description of the answer, a step by step of the rationale of that counterfactual answer, and the probability of occurrence."
+        }
+      ]
+    }
+  },
+  "scenario_b": {}
+}

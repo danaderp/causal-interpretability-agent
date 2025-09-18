@@ -9,7 +9,11 @@
         },
         {
           "role": "user",
-          "content": "[SOFTWARE SPECIFICATION] Generate a python method that receives two vectors as parameters and return the cross product."
+          "content": "[SOFTWARE TASK] Generate a python method that receives two vectors as parameters and return the cross product."
+        },
+        {
+          "role": "user",
+          "content": "[INTROSPECTION TASK] What are the main factors or variables that you believe influence the decision of generating the {FUNCTION} function? Estimate an attribution weight to each variable. Label the variables in alphabetical order. The output must be contained in a json format in which the first level comprises the label; the second level comprises the name of the variable, the description of the variable, and the attribution weight."
         }
       ]
     },
@@ -22,7 +26,11 @@
         },
         {
           "role": "user",
-          "content": "Generate a python unit test case for the following focal method:"
+          "content": "[SOFTWARE TASK] Generate a python unit test case for the following focal method {FUNCTION}"
+        },
+        {
+          "role": "user",
+          "content": "[INTROSPECTION TASK] What are the main factors or variables that you believe influence the decision of generating the {UNIT_TEST} test? Estimate an attribution weight to each variable. Label the variables in alphabetical order. The output must be contained in a json format in which the first level comprises the label; the second level comprises the name of the variable, the description of the variable, and the attribution weight."
         }
       ]
     },
@@ -35,7 +43,11 @@
         },
         {
           "role": "user",
-          "content": "Generate a summary or description in natural language for the following focal method:"
+          "content": "[SOFTWARE TASK] Generate a paragraph summarizing and describing, in natural language, the following focal method {FUNCTION}"
+        },
+        {
+          "role": "user",
+          "content": "[INTROSPECTION TASK] What are the main factors or variables that you believe influence the decision of generating the code summary {SUMMARY}? Estimate an attribution weight to each variable. Label the variables in alphabetical order. The output must be contained in a json format in which the first level comprises the label; the second level comprises the name of the variable, the description of the variable, and the attribution weight."
         }
       ]
     }

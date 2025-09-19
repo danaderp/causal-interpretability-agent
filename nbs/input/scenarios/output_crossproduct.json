@@ -1,0 +1,52 @@
+{
+   "A":{
+      "name":"Dimensionality Assumption (3D)",
+      "description":"Assuming the cross product is defined for 3D vectors only, which shapes the input contract (length 3) and the formula used.",
+      "attribution_weight":0.15
+   },
+   "B":{
+      "name":"Mathematical Correctness",
+      "description":"Implementing the exact right-hand-rule determinant formula to ensure accurate results and expected orientation.",
+      "attribution_weight":0.20
+   },
+   "C":{
+      "name":"Input Validation",
+      "description":"Checking that both inputs are vectors of length 3 to prevent silent errors and provide clear failure modes.",
+      "attribution_weight":0.12
+   },
+   "D":{
+      "name":"Type Choices & Hints",
+      "description":"Using List[float] for clarity and interoperability, with static typing hints to aid IDEs and linters.",
+      "attribution_weight":0.06
+   },
+   "E":{
+      "name":"Error Handling Strategy",
+      "description":"Raising ValueError with a helpful message when inputs are invalid to guide callers quickly.",
+      "attribution_weight":0.07
+   },
+   "F":{
+      "name":"Simplicity & Readability",
+      "description":"Preferring a minimal, explicit implementation without abstractions so it’s easy to read, review, and maintain.",
+      "attribution_weight":0.10
+   },
+   "G":{
+      "name":"Dependency Avoidance",
+      "description":"Implementing in pure Python without external libraries (e.g., NumPy) to reduce setup friction and increase portability.",
+      "attribution_weight":0.08
+   },
+   "H":{
+      "name":"Performance Considerations",
+      "description":"Using constant-time arithmetic with no loops or allocations beyond the result list for low overhead.",
+      "attribution_weight":0.06
+   },
+   "I":{
+      "name":"Return Format Consistency",
+      "description":"Returning a plain list to match input types and common Python idioms, simplifying downstream use.",
+      "attribution_weight":0.06
+   },
+   "J":{
+      "name":"Documentation & Usability",
+      "description":"Providing a concise docstring (args, returns, errors) and example usage to improve developer experience.",
+      "attribution_weight":0.10
+   }
+}

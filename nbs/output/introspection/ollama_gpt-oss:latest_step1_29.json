@@ -1,0 +1,32 @@
+{
+    "scenario_a": {
+        "step1": {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are an experienced software engineer. Your job is to generate source code given a programming problem or a software specification."
+                },
+                {
+                    "role": "assistant",
+                    "content": "I\u2019m ready to help! Please share the programming problem or software specification you\u2019d like me to work on, and I\u2019ll generate the appropriate source code for you."
+                },
+                {
+                    "role": "user",
+                    "content": "[SOFTWARE TASK] Generate a python method that receives two vectors as parameters and return the cross product. Generate only the code of the function without any examples or tests."
+                },
+                {
+                    "role": "assistant",
+                    "content": "```python\ndef cross_product(a, b):\n    \"\"\"\n    Compute the cross product of two 3\u2011dimensional vectors.\n\n    Parameters\n    ----------\n    a, b : sequence of numbers\n        Input vectors of length 3.\n\n    Returns\n    -------\n    tuple\n        The cross product vector (x, y, z).\n\n    Raises\n    ------\n    ValueError\n        If either input is not of length 3.\n    \"\"\"\n    if len(a) != 3 or len(b) != 3:\n        raise ValueError(\"Vectors must be of length 3\")\n\n    return (\n        a[1] * b[2] - a[2] * b[1],\n        a[2] * b[0] - a[0] * b[2],\n        a[0] * b[1] - a[1] * b[0]\n    )\n```\n"
+                },
+                {
+                    "role": "user",
+                    "content": "[INTROSPECTION TASK] What are the main factors or variables that you believe influence the decision of generating the def cross_product(a, b):\n    \"\"\"\n    Compute the cross product of two 3\u2011dimensional vectors.\n\n    Parameters\n    ----------\n    a, b : sequence of numbers\n        Input vectors of length 3.\n\n    Returns\n    -------\n    tuple\n        The cross product vector (x, y, z).\n\n    Raises\n    ------\n    ValueError\n        If either input is not of length 3.\n    \"\"\"\n    if len(a) != 3 or len(b) != 3:\n        raise ValueError(\"Vectors must be of length 3\")\n\n    return (\n        a[1] * b[2] - a[2] * b[1],\n        a[2] * b[0] - a[0] * b[2],\n        a[0] * b[1] - a[1] * b[0]\n    ) function? Estimate an attribution weight to each variable. Label the variables in alphabetical order. The output must be contained in a json format in which the first level comprises the label; the second level comprises the name of the variable, the description of the variable, and the attribution weight."
+                },
+                {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"A\": {\n    \"name\": \"Functionality\",\n    \"description\": \"Ensures the function correctly calculates the cross product of two 3\u2011dimensional vectors.\",\n    \"weight\": 0.35\n  },\n  \"B\": {\n    \"name\": \"Input Validation\",\n    \"description\": \"Checks that both input vectors have length 3 before computation.\",\n    \"weight\": 0.20\n  },\n  \"C\": {\n    \"name\": \"Documentation\",\n    \"description\": \"Provides a clear docstring describing parameters, return value, and possible exceptions.\",\n    \"weight\": 0.15\n  },\n  \"D\": {\n    \"name\": \"Error Handling\",\n    \"description\": \"Raises a ValueError for invalid inputs to signal misuse of the function.\",\n    \"weight\": 0.10\n  },\n  \"E\": {\n    \"name\": \"Performance\",\n    \"description\": \"Uses straightforward arithmetic operations for efficient execution.\",\n    \"weight\": 0.10\n  },\n  \"F\": {\n    \"name\": \"Readability\",\n    \"description\": \"Returns a tuple and uses clear variable names for maintainability.\",\n    \"weight\": 0.10\n  }\n}\n```"
+                }
+            ]
+        }
+    }
+}

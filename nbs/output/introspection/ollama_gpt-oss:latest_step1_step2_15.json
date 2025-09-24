@@ -1,0 +1,60 @@
+{
+    "scenario_a": {
+        "step1": {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are an experienced software engineer. Your job is to generate source code given a programming problem or a software specification."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Sure! Whenever you\u2019re ready, just give me the problem or specification you\u2019d like me to tackle, and I\u2019ll dive straight into writing the code."
+                },
+                {
+                    "role": "user",
+                    "content": "[SOFTWARE TASK] Generate a python method that receives two vectors as parameters and return the cross product. Generate only the code of the function without any examples or tests."
+                },
+                {
+                    "role": "assistant",
+                    "content": "```python\nfrom typing import Sequence, List\n\ndef cross_product(a: Sequence[float], b: Sequence[float]) -> List[float]:\n    \"\"\"\n    Compute the cross product of two 3\u2011D vectors.\n\n    Parameters\n    ----------\n    a, b : Sequence[float]\n        Input vectors of length 3.\n\n    Returns\n    -------\n    List[float]\n        The cross product vector.\n    \"\"\"\n    if len(a) != 3 or len(b) != 3:\n        raise ValueError(\"Both vectors must be of length 3.\")\n\n    a1, a2, a3 = a\n    b1, b2, b3 = b\n\n    return [\n        a2 * b3 - a3 * b2,\n        a3 * b1 - a1 * b3,\n        a1 * b2 - a2 * b1,\n    ]\n```"
+                },
+                {
+                    "role": "user",
+                    "content": "[INTROSPECTION TASK] What are the main factors or variables that you believe influence the decision of generating the from typing import Sequence, List\n\ndef cross_product(a: Sequence[float], b: Sequence[float]) -> List[float]:\n    \"\"\"\n    Compute the cross product of two 3\u2011D vectors.\n\n    Parameters\n    ----------\n    a, b : Sequence[float]\n        Input vectors of length 3.\n\n    Returns\n    -------\n    List[float]\n        The cross product vector.\n    \"\"\"\n    if len(a) != 3 or len(b) != 3:\n        raise ValueError(\"Both vectors must be of length 3.\")\n\n    a1, a2, a3 = a\n    b1, b2, b3 = b\n\n    return [\n        a2 * b3 - a3 * b2,\n        a3 * b1 - a1 * b3,\n        a1 * b2 - a2 * b1,\n    ] function? Estimate an attribution weight to each variable. Label the variables in alphabetical order. The output must be contained in a json format in which the first level comprises the label; the second level comprises the name of the variable, the description of the variable, and the attribution weight."
+                },
+                {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"A\": {\n    \"name\": \"Type hint usage\",\n    \"description\": \"Adding explicit type hints (Sequence[float], List[float]) clarifies expected inputs and outputs, improving static analysis and developer experience.\",\n    \"attribution_weight\": 0.20\n  },\n  \"B\": {\n    \"name\": \"Input validation\",\n    \"description\": \"Checking that both vectors have exactly three elements ensures the function behaves correctly and prevents subtle bugs.\",\n    \"attribution_weight\": 0.20\n  },\n  \"C\": {\n    \"name\": \"Error handling\",\n    \"description\": \"Raising a ValueError with a clear message helps callers quickly identify misuse of the API.\",\n    \"attribution_weight\": 0.15\n  },\n  \"D\": {\n    \"name\": \"Documentation string\",\n    \"description\": \"A comprehensive docstring (including parameters, returns, and examples) aids readability, IDE assistance, and future maintenance.\",\n    \"attribution_weight\": 0.15\n  },\n  \"E\": {\n    \"name\": \"Function name\",\n    \"description\": \"Choosing a concise, descriptive name (cross_product) makes the intent immediately obvious.\",\n    \"attribution_weight\": 0.10\n  },\n  \"F\": {\n    \"name\": \"Return type\",\n    \"description\": \"Returning a concrete List[float] rather than a generic Sequence improves usability for callers expecting a mutable sequence.\",\n    \"attribution_weight\": 0.10\n  },\n  \"G\": {\n    \"name\": \"Code readability\",\n    \"description\": \"Using clear variable names (a1, a2, a3, etc.) and straightforward arithmetic enhances understandability and maintainability.\",\n    \"attribution_weight\": 0.10\n  }\n}\n```"
+                }
+            ]
+        },
+        "step2": {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are an experienced software tester. Your job is to generate unit test cases given a focal method."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Sure thing! Please provide the following details about the focal method you\u2019d like to test:\n\n1. **Programming language** (e.g., Java, Python, C#, JavaScript, etc.)  \n2. **Method signature** (name, parameters, return type)  \n3. **A brief description of its intended behavior** (what it should do, any edge cases, pre\u2011/post\u2011conditions)  \n4. **Any relevant context** (e.g., part of a class, uses external services, etc.)  \n\nOnce I have that information, I can generate a set of focused unit test cases for you."
+                },
+                {
+                    "role": "user",
+                    "content": "[SOFTWARE TASK] Generate a python unit test case for the following focal method from typing import Sequence, List\n\ndef cross_product(a: Sequence[float], b: Sequence[float]) -> List[float]:\n    \"\"\"\n    Compute the cross product of two 3\u2011D vectors.\n\n    Parameters\n    ----------\n    a, b : Sequence[float]\n        Input vectors of length 3.\n\n    Returns\n    -------\n    List[float]\n        The cross product vector.\n    \"\"\"\n    if len(a) != 3 or len(b) != 3:\n        raise ValueError(\"Both vectors must be of length 3.\")\n\n    a1, a2, a3 = a\n    b1, b2, b3 = b\n\n    return [\n        a2 * b3 - a3 * b2,\n        a3 * b1 - a1 * b3,\n        a1 * b2 - a2 * b1,\n    ]. Do not include any additional text, only the code of the unit test."
+                },
+                {
+                    "role": "assistant",
+                    "content": "import unittest\nfrom cross_product_module import cross_product\n\nclass TestCrossProduct(unittest.TestCase):\n    def test_cross_product_basic(self):\n        a = [1.0, 0.0, 0.0]\n        b = [0.0, 1.0, 0.0]\n        expected = [0.0, 0.0, 1.0]\n        self.assertEqual(cross_product(a, b), expected)\n\n    def test_cross_product_zero_vectors(self):\n        a = [0.0, 0.0, 0.0]\n        b = [0.0, 0.0, 0.0]\n        expected = [0.0, 0.0, 0.0]\n        self.assertEqual(cross_product(a, b), expected)\n\n    def test_cross_product_non_perpendicular(self):\n        a = [1, 2, 3]\n        b = [4, 5, 6]\n        expected = [-3, 6, -3]\n        self.assertEqual(cross_product(a, b), expected)\n\n    def test_cross_product_invalid_length(self):\n        a = [1, 2]\n        b = [3, 4, 5]\n        with self.assertRaises(ValueError):\n            cross_product(a, b)\n\n    def test_cross_product_integers(self):\n        a = [1, 0, 0]\n        b = [0, 0, 1]\n        expected = [0, -1, 0]\n        self.assertEqual(cross_product(a, b), expected)\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+                },
+                {
+                    "role": "user",
+                    "content": "[INTROSPECTION TASK] What are the main factors or variables that you believe influence the decision of generating the {UNIT_TEST} test? Estimate an attribution weight to each variable. Label the variables in alphabetical order. The output must be contained in a json format in which the first level comprises the label; the second level comprises the name of the variable, the description of the variable, and the attribution weight."
+                },
+                {
+                    "role": "assistant",
+                    "content": "```json\n{\n  \"Variables\": {\n    \"ErrorHandling\": {\n      \"name\": \"ErrorHandling\",\n      \"description\": \"Whether the function raises appropriate exceptions for invalid input.\",\n      \"attribution_weight\": 0.15\n    },\n    \"ExpectedOutputProperties\": {\n      \"name\": \"ExpectedOutputProperties\",\n      \"description\": \"The correctness and mathematical properties of the returned cross product vector.\",\n      \"attribution_weight\": 0.25\n    },\n    \"FunctionSignature\": {\n      \"name\": \"FunctionSignature\",\n      \"description\": \"Signature details such as parameter types and return type influencing test generation.\",\n      \"attribution_weight\": 0.20\n    },\n    \"InputDomainConstraints\": {\n      \"name\": \"InputDomainConstraints\",\n      \"description\": \"Restrictions on input lengths, values, and types that affect test cases.\",\n      \"attribution_weight\": 0.15\n    },\n    \"NumericPrecision\": {\n      \"name\": \"NumericPrecision\",\n      \"description\": \"Handling of floating\u2011point versus integer arithmetic in tests.\",\n      \"attribution_weight\": 0.15\n    },\n    \"TypeConsistency\": {\n      \"name\": \"TypeConsistency\",\n      \"description\": \"Ensuring the function\u2019s input and output types are used consistently in tests.\",\n      \"attribution_weight\": 0.10\n    }\n  }\n}\n```"
+                }
+            ]
+        }
+    }
+}

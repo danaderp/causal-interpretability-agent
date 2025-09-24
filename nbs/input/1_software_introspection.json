@@ -26,7 +26,7 @@
         },
         {
           "role": "user",
-          "content": "[SOFTWARE TASK] Generate a python unit test case for the following focal method {FUNCTION}"
+          "content": "[SOFTWARE TASK] Generate a python unit test case for the following focal method {FUNCTION}. Do not include any additional text, only the code of the unit test."
         },
         {
           "role": "user",

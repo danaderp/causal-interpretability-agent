@@ -10,8 +10,7 @@
 			"NODE_VERSION": "none"
 		}
 	},
-    "forwardPorts": [11434, 8080],
-    "appPort": [11434, 8080],
+	"forwardPorts": [11434],
 	"mounts": [
 		//"source=/nfs/semeru/gates,target=/workspaces/gates/data,type=bind,consistency=cached",
 		"source=/scratch/danielrc/datax,target=/workspaces/causal-interpretability-agent/datax,type=bind,consistency=cached", 
@@ -21,5 +20,5 @@
         //"MY_PROJECT_NAME": "The-container-name-here" //NOTE: make this name the same as the folder containing the repo
         "MY_PROJECT_NAME": "causal-interpretability-agent"
     },
-	"runArgs": ["--gpus", "all", "-e", "GRANT_SUDO=yes","--name", "${localWorkspaceFolderBasename}-danielrc", "--add-host", "host.docker.internal:host-gateway"]	
+	"runArgs": ["--gpus", "all", "-e", "GRANT_SUDO=yes","--name", "${localWorkspaceFolderBasename}-danielrc", "--add-host=host.docker.internal:host-gateway", "--network=devnet", "-p=11434:11434"]	
 }
